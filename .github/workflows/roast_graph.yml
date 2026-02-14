@@ -26,31 +26,27 @@ jobs:
 
       - name: Generate Graphs
         run: |
+          # エラーがあれば即停止
           set -e
-          set -o pipefail
+
           # 全ての.alogファイルを検索し、画像生成スクリプトを実行
           find . -name "*.alog" | while read filename; do
             # 拡張子を.pngに変更したファイル名を作成
             pngname="${filename%.*}.png"
 
-            # 画像が既に存在するかチェック（上書きしたい場合はこのif文を外す）
-            # ここでは常に最新のデザインで再生成するようにif文なしで実行します
+            # 画像の生成（常に最新のデザインで上書き）
             echo "Processing $filename -> $pngname"
             python render_graph.py "$filename" "$pngname"
           done
 
       - name: Commit and Push changes
         run: |
-          # Check if there are any png files to add
-          if compgen -G "**/*.png" > /dev/null; then
-            echo "Found PNG files, adding to git..."
-            git add **/*.png
-          else
-            echo "No PNG files found to add."
-          fi
+          # カレントディレクトリ以下の全ての変更（新規・更新されたPNG）をステージング
+          git add .
 
-          # 変更がある場合のみコミット
+          # ステージングされた変更があるか確認してからコミット
           if ! git diff --cached --quiet; then
+            echo "Changes detected, committing..."
             git commit -m "Add roast graphs [skip ci]"
             git push
           else
