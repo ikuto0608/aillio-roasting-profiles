@@ -41,6 +41,9 @@ jobs:
 
       - name: Commit and Push changes
         run: |
+          git config --global user.email "ikuto0608@me.com"
+          git config --global user.name "ikuto0608"
+
           # カレントディレクトリ以下の全ての変更（新規・更新されたPNG）をステージング
           git add .
 
