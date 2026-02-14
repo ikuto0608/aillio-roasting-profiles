@@ -1,0 +1,51 @@
+name: Generate Roast Graphs
+
+on:
+  push:
+    paths:
+      - '**/*.alog' # .alogファイルが変更された時のみ実行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 画像をコミットするために書き込み権限が必要
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Generate Graphs
+        run: |
+          # 全ての.alogファイルを検索し、画像生成スクリプトを実行
+          find . -name "*.alog" | while read filename; do
+            # 拡張子を.pngに変更したファイル名を作成
+            pngname="${filename%.*}.png"
+            
+            # 画像が既に存在するかチェック（上書きしたい場合はこのif文を外す）
+            # ここでは常に最新のデザインで再生成するようにif文なしで実行します
+            echo "Processing $filename -> $pngname"
+            python render_graph.py "$filename" "$pngname"
+          done
+
+      - name: Commit and Push changes
+        run: |
+          # 生成されたpngファイルを追加
+          git add **/*.png
+          
+          # 変更がある場合のみコミット
+          if ! git diff --cached --quiet; then
+            git commit -m "Add roast graphs [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
