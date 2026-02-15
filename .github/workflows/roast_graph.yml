@@ -39,7 +39,13 @@ jobs:
             # pngディレクトリ内のパスを作成
             pngname="png/${basename}.png"
 
-            # 画像の生成（常に最新のデザインで上書き）
+            # 画像が既に存在する場合はスキップ
+            if [ -f "$pngname" ]; then
+              echo "Skipping $filename (Already exists)"
+              continue
+            fi
+
+            # 画像の生成
             echo "Processing $filename -> $pngname"
             python render_graph.py "$filename" "$pngname"
           done
