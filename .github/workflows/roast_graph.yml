@@ -29,10 +29,15 @@ jobs:
           # エラーがあれば即停止
           set -e
 
+          # pngディレクトリを作成
+          mkdir -p png
+
           # 全ての.alogファイルを検索し、画像生成スクリプトを実行
           find . -name "*.alog" | while read filename; do
-            # 拡張子を.pngに変更したファイル名を作成
-            pngname="${filename%.*}.png"
+            # ファイル名（拡張子なし）を取得
+            basename=$(basename "$filename" .alog)
+            # pngディレクトリ内のパスを作成
+            pngname="png/${basename}.png"
 
             # 画像の生成（常に最新のデザインで上書き）
             echo "Processing $filename -> $pngname"
@@ -44,13 +49,13 @@ jobs:
           git config --global user.email "ikuto0608@me.com"
           git config --global user.name "ikuto0608"
 
-          # カレントディレクトリ以下の全ての変更（新規・更新されたPNG）をステージング
-          git add .
+          # pngディレクトリ以下の変更をステージング
+          git add png/
 
           # ステージングされた変更があるか確認してからコミット
           if ! git diff --cached --quiet; then
             echo "Changes detected, committing..."
-            git commit -m "Add roast graphs [skip ci]"
+            git commit -m "Add roast graphs to png/ [skip ci]"
             git push
           else
             echo "No changes to commit"
