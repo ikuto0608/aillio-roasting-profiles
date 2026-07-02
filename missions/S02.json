@@ -4,6 +4,14 @@
   "series_title_en": "Light Roast vs. Milk",
   "premise_ja": "店主がカフェオレで常飲している浅煎り (Ethiopia Gigesa Natural) を、1変数ずつの公開実験で「ミルクに負けない甘さ・質感・余韻」へ鍛えるシーズン。判定はブラインド二択1問 (ドリップ主判定 + カフェオレ橋渡しテスト)。完結時は S01 と同様、完成プロファイルの豆を店で販売する。",
   "recording_note": "収録は run-reels-session の .alog リプレイ。エスプレッソマシンは無く、カフェオレは濃縮ドリップ+ミルクで作る前提で語る。",
+  "bean_facts": {
+    "origin": "Ethiopia",
+    "lot_name": "Gigesa",
+    "process": "Natural",
+    "variety": null,
+    "altitude": null,
+    "note": "実況・テロップ・投稿コメントは、この bean_facts と .alog 実測値に無い事実を断定しない。null の項目は『不明』であり、精製方式や品種を推測で語らない (S02-E01 収録でアナエロビック/ハニー精製と誤認する hallucination が発生した教訓)。数値の捏造 (実測に無い水分活性値等) も禁止。"
+  },
   "episodes": [
     {
       "id": "S02-E01",
