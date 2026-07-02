@@ -1,0 +1,87 @@
+{
+  "series_id": "S02",
+  "series_title_ja": "ミルクに負けない浅煎り",
+  "series_title_en": "Light Roast vs. Milk",
+  "premise_ja": "店主がカフェオレで常飲している浅煎り (Ethiopia Gigesa Natural) を、1変数ずつの公開実験で「ミルクに負けない甘さ・質感・余韻」へ鍛えるシーズン。判定はブラインド二択1問 (ドリップ主判定 + カフェオレ橋渡しテスト)。完結時は S01 と同様、完成プロファイルの豆を店で販売する。",
+  "recording_note": "収録は run-reels-session の .alog リプレイ。エスプレッソマシンは無く、カフェオレは濃縮ドリップ+ミルクで作る前提で語る。",
+  "episodes": [
+    {
+      "id": "S02-E01",
+      "status": "ready",
+      "alog": "26-06-25_gigesa_no57.alog",
+      "reference_alogs": ["26-06-25_gigesa_no56.alog"],
+      "title_ja": "いま飲んでる一杯 — 数値は基準超過、でも美味い",
+      "title_en": "The Cup I Drink Every Day",
+      "hypothesis_ja": "現行ロット no57 (Dev 1:41 / DTR 22.2%) は Aillio の目安 (Dev ≤1:30 / DTR 16-18%) を超えている。詰めればもっと良くなるのか、それとも今がこの豆の正解なのか。",
+      "talk_theme": {
+        "angle_ja": "数値派 (Analyst) と体験派 (Navigator) の見解が割れる回。基準超過という事実と『店主はカフェオレで美味しく飲んでいる』という事実を両立させたまま、検証可能な仮説に落とす。",
+        "beats_ja": [
+          "実測: 1ハゼ 5:53 @ 186.1℃ / 排出 7:34 @ 198.5℃ / Dev 1:41 (DTR 22.2%) / 重量損失 13.3% / crash なしの滑らかな RoR",
+          "論点1: Dev 1:41 は目安 1:30 超え。雑味/ざらつきのリスク帯のはずが、なぜカフェオレでは美味いのか (ミルクが丸めている? それとも数値の目安がミルク用途では別?)",
+          "論点2: 同日焙煎の兄弟ロット no56 は Dev 2:51 (DTR 33.5%) — 仕上げ時間だけ 70秒違う天然の A/B ペアが既に存在する",
+          "論点3: ミルクに負けるとは何か — 甘さ・密度・余韻のどれが削られるのか。1ハゼ 5:53 の速い展開 = 香ばしさを作る時間 (Maillard) が短い伏線も置く",
+          "仮説宣言: 次回、仕上げを 1:30 に詰めた挑戦ロットを焼き、no57 とブラインド二択 (どちらの余韻が長いか)"
+        ]
+      },
+      "verdict": null,
+      "next_hook_ja": "11秒の勝負 — 仕上げを 1:30 に詰めたら、余韻は伸びるのか死ぬのか。"
+    },
+    {
+      "id": "S02-E02",
+      "status": "planned",
+      "alog": null,
+      "reference_alogs": ["26-06-25_gigesa_no57.alog", "26-06-25_gigesa_no56.alog"],
+      "title_ja": "11秒の勝負 — 仕上げ 1:30 の挑戦ロット",
+      "title_en": "The 11-Second Duel",
+      "hypothesis_ja": "Dev のみ 1:41 → 1:30 に詰める (他は no57 と同一)。ドリップ二択『どちらの余韻が長い?』とカフェオレ橋渡しで判定。",
+      "talk_theme": {
+        "angle_ja": "1変数実験の緊張感。数値派の予想 vs 体験派の予想を収録前に言い切らせ、ブラインド判定の結果で答え合わせする。",
+        "beats_ja": [
+          "挑戦ロットのカーブを no57 と重ねて差分は Dev だけであることを確認",
+          "no56 (Dev 2:51) を含めた 3点で『仕上げ時間と余韻』の関係を仮説として立てる",
+          "判定結果 (verdict) の発表と、負けた側の敗因分析"
+        ]
+      },
+      "verdict": null,
+      "next_hook_ja": "香ばしさを作る時間 — 1ハゼまでを遅らせたら、ミルクの中で骨格は立つのか。"
+    },
+    {
+      "id": "S02-E03",
+      "status": "planned",
+      "alog": null,
+      "reference_alogs": [],
+      "title_ja": "香ばしさを作る時間 — ボディの実験",
+      "title_en": "Time That Builds the Body",
+      "hypothesis_ja": "総時間は変えず、中盤の火力配分で 1ハゼ到達を遅らせて Maillard 比率を増やす。ミルク耐性の核 (密度・甘さ) が立つかを検証。",
+      "talk_theme": {
+        "angle_ja": "シーズンの本丸。速い展開 (1ハゼ 5:53) はこの豆の個性か、それともミルクに負ける原因か。",
+        "beats_ja": [
+          "E01 で置いた伏線 (Maillard 短い) の回収",
+          "エネルギー配分の考え方 — 総時間でなく、どの相に火を使うか",
+          "カフェオレ橋渡しテストの結果"
+        ]
+      },
+      "verdict": null,
+      "next_hook_ja": "完成プロファイルへ — 勝った要素だけを一本に束ねる。"
+    },
+    {
+      "id": "S02-FINAL",
+      "status": "planned",
+      "alog": null,
+      "reference_alogs": [],
+      "title_ja": "ミルクに負けない一杯、完成 (完結回)",
+      "title_en": "A Light Roast That Stands Up to Milk (Finale)",
+      "hypothesis_ja": "E02/E03 の勝者要素を束ねた完成プロファイルを発表し、S01 と同様に店で販売開始する。",
+      "talk_theme": {
+        "angle_ja": "S01 完結回の型を踏襲: 完成プロファイル発表 → 販売告知。シーズンの判定履歴 (verdict) を振り返る。",
+        "beats_ja": [
+          "全実験の勝敗表の振り返り",
+          "完成プロファイルのカーブ発表",
+          "販売開始の告知 (ピクセル世界の店へ)"
+        ]
+      },
+      "verdict": null,
+      "next_hook_ja": null
+    }
+  ]
+}
